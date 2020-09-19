@@ -1,5 +1,28 @@
-﻿  GraphicsRedderer.cpp
-D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(9,36): warning C4305: “+=”: 从“double”到“float”截断
-D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(10,9): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
-D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(11,9): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
-  GraphicsRedderer.vcxproj -> D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\Debug\GraphicsRedderer.exe
+﻿  geometry.cpp
+  model.cpp
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\model.cpp(82,56): error C2662: “int TGAImage::get_width(void)”: 不能将“this”指针从“const TGAImage”转换为“TGAImage &”
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\model.cpp(82,34): message : 转换丢失限定符
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\tgaimage.h(89,6): message : 参见“TGAImage::get_width”的声明
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\model.cpp(82,91): error C2662: “int TGAImage::get_height(void)”: 不能将“this”指针从“const TGAImage”转换为“TGAImage &”
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\model.cpp(82,68): message : 转换丢失限定符
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\tgaimage.h(90,6): message : 参见“TGAImage::get_height”的声明
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\model.cpp(82,92): error C2660: “TGAImage::get”: 函数不接受 1 个参数
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\tgaimage.h(85,11): message : 参见“TGAImage::get”的声明
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\model.cpp(86,60): error C2662: “int TGAImage::get_width(void)”: 不能将“this”指针从“const TGAImage”转换为“TGAImage &”
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\model.cpp(86,39): message : 转换丢失限定符
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\tgaimage.h(89,6): message : 参见“TGAImage::get_width”的声明
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\model.cpp(86,94): error C2662: “int TGAImage::get_height(void)”: 不能将“this”指针从“const TGAImage”转换为“TGAImage &”
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\model.cpp(86,72): message : 转换丢失限定符
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\tgaimage.h(90,6): message : 参见“TGAImage::get_height”的声明
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\model.cpp(86,95): error C2660: “TGAImage::get”: 函数不接受 1 个参数
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\tgaimage.h(85,11): message : 参见“TGAImage::get”的声明
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\model.cpp(89,19): error C2676: 二进制“[”:“TGAColor”不定义该运算符或到预定义运算符可接收的类型的转换
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\model.cpp(94,58): error C2662: “int TGAImage::get_width(void)”: 不能将“this”指针从“const TGAImage”转换为“TGAImage &”
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\model.cpp(94,35): message : 转换丢失限定符
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\tgaimage.h(89,6): message : 参见“TGAImage::get_width”的声明
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\model.cpp(94,94): error C2662: “int TGAImage::get_height(void)”: 不能将“this”指针从“const TGAImage”转换为“TGAImage &”
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\model.cpp(94,70): message : 转换丢失限定符
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\tgaimage.h(90,6): message : 参见“TGAImage::get_height”的声明
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\model.cpp(94,95): error C2660: “TGAImage::get”: 函数不接受 1 个参数
+  正在生成代码...
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\tgaimage.h(85,11): message : 参见“TGAImage::get”的声明
