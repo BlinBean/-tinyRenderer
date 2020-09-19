@@ -1,2 +1,5 @@
 ﻿  GraphicsRedderer.cpp
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(9,36): warning C4305: “+=”: 从“double”到“float”截断
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(10,9): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(11,9): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
   GraphicsRedderer.vcxproj -> D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\Debug\GraphicsRedderer.exe
