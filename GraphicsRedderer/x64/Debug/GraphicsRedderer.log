@@ -1,1 +1,8 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.Platform.targets(67,5): error MSB8020: 无法找到 v142 的生成工具(平台工具集 =“v142”)。若要使用 v142 生成工具进行生成，请安装 v142 生成工具。或者，可以升级到当前 Visual Studio 工具，方式是通过选择“项目”菜单或右键单击该解决方案，然后选择“重定解决方案目标”。
+﻿  GraphicsRedderer.cpp
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\tgaimage.h(65,53): warning C4244: “=”: 从“float”转换到“unsigned char”，可能丢失数据
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(27,15): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(65,11): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(66,11): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(67,11): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(68,11): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  GraphicsRedderer.vcxproj -> D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\x64\Debug\GraphicsRedderer.exe
