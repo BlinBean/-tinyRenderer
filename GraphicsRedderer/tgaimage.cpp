@@ -5,8 +5,7 @@
 #include <math.h>
 #include "tgaimage.h"
 
-TGAImage::TGAImage() : data(NULL), width(0), height(0), bytespp(0) {
-}
+TGAImage::TGAImage() : data(NULL), width(0), height(0), bytespp(0) {}
 
 TGAImage::TGAImage(int w, int h, int bpp) : data(NULL), width(w), height(h), bytespp(bpp) {
 	unsigned long nbytes = width * height * bytespp;
@@ -14,10 +13,7 @@ TGAImage::TGAImage(int w, int h, int bpp) : data(NULL), width(w), height(h), byt
 	memset(data, 0, nbytes);
 }
 
-TGAImage::TGAImage(const TGAImage& img) {
-	width = img.width;
-	height = img.height;
-	bytespp = img.bytespp;
+TGAImage::TGAImage(const TGAImage& img) : data(NULL), width(img.width), height(img.height), bytespp(img.bytespp) {
 	unsigned long nbytes = width * height * bytespp;
 	data = new unsigned char[nbytes];
 	memcpy(data, img.data, nbytes);
@@ -113,13 +109,13 @@ bool TGAImage::load_rle_data(std::ifstream& in) {
 		if (chunkheader < 128) {
 			chunkheader++;
 			for (int i = 0; i < chunkheader; i++) {
-				in.read((char*)colorbuffer.raw, bytespp);
+				in.read((char*)colorbuffer.bgra, bytespp);
 				if (!in.good()) {
 					std::cerr << "an error occured while reading the header\n";
 					return false;
 				}
 				for (int t = 0; t < bytespp; t++)
-					data[currentbyte++] = colorbuffer.raw[t];
+					data[currentbyte++] = colorbuffer.bgra[t];
 				currentpixel++;
 				if (currentpixel > pixelcount) {
 					std::cerr << "Too many pixels read\n";
@@ -129,14 +125,14 @@ bool TGAImage::load_rle_data(std::ifstream& in) {
 		}
 		else {
 			chunkheader -= 127;
-			in.read((char*)colorbuffer.raw, bytespp);
+			in.read((char*)colorbuffer.bgra, bytespp);
 			if (!in.good()) {
 				std::cerr << "an error occured while reading the header\n";
 				return false;
 			}
 			for (int i = 0; i < chunkheader; i++) {
 				for (int t = 0; t < bytespp; t++)
-					data[currentbyte++] = colorbuffer.raw[t];
+					data[currentbyte++] = colorbuffer.bgra[t];
 				currentpixel++;
 				if (currentpixel > pixelcount) {
 					std::cerr << "Too many pixels read\n";
@@ -149,7 +145,6 @@ bool TGAImage::load_rle_data(std::ifstream& in) {
 }
 
 bool TGAImage::write_tga_file(const char* filename, bool rle) {
-	//std::cout << "aaa" << std::endl;
 	unsigned char developer_area_ref[4] = { 0, 0, 0, 0 };
 	unsigned char extension_area_ref[4] = { 0, 0, 0, 0 };
 	unsigned char footer[18] = { 'T','R','U','E','V','I','S','I','O','N','-','X','F','I','L','E','.','\0' };
@@ -260,11 +255,19 @@ TGAColor TGAImage::get(int x, int y) {
 	return TGAColor(data + (x + y * width) * bytespp, bytespp);
 }
 
-bool TGAImage::set(int x, int y, TGAColor c) {
+bool TGAImage::set(int x, int y, TGAColor& c) {
 	if (!data || x < 0 || y < 0 || x >= width || y >= height) {
 		return false;
 	}
-	memcpy(data + (x + y * width) * bytespp, c.raw, bytespp);
+	memcpy(data + (x + y * width) * bytespp, c.bgra, bytespp);
+	return true;
+}
+
+bool TGAImage::set(int x, int y, const TGAColor& c) {
+	if (!data || x < 0 || y < 0 || x >= width || y >= height) {
+		return false;
+	}
+	memcpy(data + (x + y * width) * bytespp, c.bgra, bytespp);
 	return true;
 }
 
@@ -302,6 +305,8 @@ bool TGAImage::flip_vertically() {
 	for (int j = 0; j < half; j++) {
 		unsigned long l1 = j * bytes_per_line;
 		unsigned long l2 = (height - 1 - j) * bytes_per_line;
+		//将(data+l1)和(data+l2)中的数据交换
+		//在opengl中y轴图片的y轴相反
 		memmove((void*)line, (void*)(data + l1), bytes_per_line);
 		memmove((void*)(data + l1), (void*)(data + l2), bytes_per_line);
 		memmove((void*)(data + l2), (void*)line, bytes_per_line);
