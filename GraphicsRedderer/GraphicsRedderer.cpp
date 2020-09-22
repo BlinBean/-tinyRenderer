@@ -1,10 +1,13 @@
-﻿#include "tgaimage.h"
-#include <iostream>
+﻿#include <iostream>
+#include<algorithm>
+#include<vector>
+#include "tgaimage.h"
 #include"model.h"
 #include"geometry.h"
 
 const TGAColor white = TGAColor(255, 255, 255, 255);
 const TGAColor red = TGAColor(255, 0, 0, 255);
+
 
 
 void line(int x0, int y0, int x1, int y1, TGAImage& image, TGAColor color) {
@@ -48,6 +51,13 @@ void line(int x0, int y0, int x1, int y1, TGAImage& image, TGAColor color) {
 	}
 
 }
+
+void triangle( Vec2i t0, Vec2i t1, Vec2i t2, TGAImage& image, TGAColor color) {
+	line(t0.x,t0.y,t1.x,t1.y, image, color);
+	line(t1.x,t1.y,t2.x,t2.y, image, color);
+	line(t0.x,t0.y,t2.x,t2.y, image, color);
+}
+
 
 int main(int argc, char** argv) {
 
