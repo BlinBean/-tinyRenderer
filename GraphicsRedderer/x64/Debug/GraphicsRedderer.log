@@ -10,9 +10,9 @@ D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\geometry.h
 D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\geometry.h(83,1): warning C4244:         [
 D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\geometry.h(83,1): warning C4244:             T=int
 D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\geometry.h(83,1): warning C4244:         ]
-D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(79): message : 查看对正在编译的函数 模板 实例化“vec<2,int> operator *<2,int,float>(vec<2,int>,const U &)”的引用
-D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(79): message :         with
-D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(79): message :         [
-D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(79): message :             U=float
-D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(79): message :         ]
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(120): message : 查看对正在编译的函数 模板 实例化“vec<2,int> operator *<2,int,float>(vec<2,int>,const U &)”的引用
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(120): message :         with
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(120): message :         [
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(120): message :             U=float
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(120): message :         ]
   GraphicsRedderer.vcxproj -> D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\x64\Debug\GraphicsRedderer.exe

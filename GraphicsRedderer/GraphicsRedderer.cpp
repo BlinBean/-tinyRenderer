@@ -69,41 +69,59 @@ void triangle(Vec2i t0, Vec2i t1, Vec2i t2, TGAImage& image, TGAColor color) {
 
 	int total_height = t2.y - t0.y;
 
+	//------------------第一版-------------------
 	//底部着色//起点t0
-	for (int y = t0.y; y <= t1.y;y++) {
-		int segment_height = t1.y - t0.y;//t1-t0
-		//减去底部顶点
-		float alpha = (float)(y - t0.y) / total_height;//长
-		float beta = (float)(y - t0.y) / segment_height;//短
+	//for (int y = t0.y; y <= t1.y;y++) {
+	//	int segment_height = t1.y - t0.y;//t1-t0
+	//	//减去底部顶点
+	//	float alpha = (float)(y - t0.y) / total_height;//长
+	//	float beta = (float)(y - t0.y) / segment_height;//短
+
+	//	Vec2i A = t0 + (t2 - t0) * alpha;
+	//	Vec2i B = t0 + (t1 - t0) * beta;
+
+	//	if (A.x > B.x)
+	//		std::swap(A,B);
+	//	for (int j = A.x; j < B.x;j++) {
+	//		image.set(j, y, color);
+	//	}
+
+	//	//image.set(A.x, y, red);
+	//	//image.set(B.x, y, green);
+	//}
+	////顶部着色//起点t1//
+	//for (int y = t1.y; y <= t2.y; y++) {
+	//	int segment_height = t2.y - t1.y;//t2-t1
+
+	//	//减去t0和t1
+	//	float alpha = (float)(y - t0.y) / total_height;//长
+	//	float beta = (float)(y- t1.y) / segment_height;//短
+
+	//	Vec2i A = t0 + (t2 - t0) * alpha;
+	//	Vec2i B = t1 + (t2 - t1) * beta;
+
+	//	if (A.x > B.x)
+	//		std::swap(A, B);
+	//	for (int j = A.x; j < B.x; j++) {
+	//		image.set(j, y, color);
+	//	}
+	//}
+	//------------END------------------
+
+	for (int i = 0; i < total_height; i++) {
+		//t1和t0在同一高度or i值大于下面两点的差值
+		bool sencond_half = i > t1.y - t0.y || t1.y == t0.y;
+		//如果大于下面两点的差值的话,用上面的点减第二高的点//否则得到下面两点的差值
+		int segment_height = sencond_half ? t2.y - t1.y : t1.y - t0.y;
+		
+		float alpha = (float)i / total_height;
+		float beta = (float)(i - (sencond_half ?t1.y-t0.y:0)) / segment_height;
 
 		Vec2i A = t0 + (t2 - t0) * alpha;
-		Vec2i B = t0 + (t1 - t0) * beta;
-
-		if (A.x > B.x)
-			std::swap(A,B);
-		for (int j = A.x; j < B.x;j++) {
-			image.set(j, y, color);
-		}
-
-		//image.set(A.x, y, red);
-		//image.set(B.x, y, green);
-	}
-	//顶部着色//起点t1//
-	for (int y = t1.y; y <= t2.y; y++) {
-		int segment_height = t2.y - t1.y;//t2-t1
-
-		//减去t0和t1
-		float alpha = (float)(y - t0.y) / total_height;//长
-		float beta = (float)(y- t1.y) / segment_height;//短
-
-		Vec2i A = t0 + (t2 - t0) * alpha;
-		Vec2i B = t1 + (t2 - t1) * beta;
-
-		if (A.x > B.x)
-			std::swap(A, B);
-		for (int j = A.x; j < B.x; j++) {
-			image.set(j, y, color);
-		}
+		Vec2i B=sencond_half?t1+(t2-t1)*beta:t0+(t1-t0)*beta;
+		if (A.x > B.x) std::swap(A, B);
+		for (int j = A.x; j <= B.x; j++)
+			image.set(j,t0.y+i,color);
 	}
 
 	//line(t0.x, t0.y, t1.x, t1.y, image, color);
