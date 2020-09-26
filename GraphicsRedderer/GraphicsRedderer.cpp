@@ -157,8 +157,8 @@ void triangle(Vec2i *pts,TGAImage &image ,TGAColor color) {
 	}
 	Vec2i P;
 	//填充图像
-	for (P.x == bboxmin.x; P.x <= bboxmax.x;P.x++) {
-		for (P.y == bboxmin.y; P.y <= bboxmax.y;P.y++) {
+ for (P.x=bboxmin.x; P.x<=bboxmax.x; P.x++) { 
+        for (P.y=bboxmin.y; P.y<=bboxmax.y; P.y++) { 
 			Vec3f bc_screen = barycentric(pts, P);
 			if (bc_screen.x < 0 || bc_screen.y < 0 || bc_screen.z < 0) continue;
 			image.set(P.x, P.y, color);
@@ -168,20 +168,21 @@ void triangle(Vec2i *pts,TGAImage &image ,TGAColor color) {
 
 int main(int argc, char** argv) {
 
-	//TGAImage image(500, 500, TGAImage::RGB);
+	TGAImage image(500, 500, TGAImage::RGB);
 
-	//----------------------
 
 	//--------point-------
 	//add point and line
 	//image.set(52, 41, red);
+	//--------END---------
 
 	//-------line-----------
 	//line(13,20,80,40,image,white);
 	//line(20,13,40,80,image,red);
 	//line(80,40,13,20,image,red);
+	//-------END------------
 
-	//---------import model----------------
+	//---------import model line----------------
 	//Model* model = new Model("D:\\School\\Scripts\\Graph\\GraphicsC++\\GraphicsRedderer\\obj\\african_head\\african_head.obj");
 	//for (int i = 0; i < model->nfaces(); i++) {
 	//	std::vector<int> face = model->face(i, 0);
@@ -195,6 +196,56 @@ int main(int argc, char** argv) {
 	//		line(x0, y0, x1, y1, image, white);
 	//	}
 	//}
+	//---------------END---------------------
+
+	//-----------------随机颜色填充模型----------------
+	//Model* model = new Model("..\\obj\\african_head\\african_head.obj");
+	//for (int i = 0; i < model->nfaces(); i++) {
+	//	std::vector<int> face = model->face(i, 0);
+	//	Vec2i screen_coords[3];
+	//	for (int j = 0; j < 3; j++) {
+	//		//遍历模型中的三角
+	//		Vec3f world_coords = model->vert(face[j]);
+	//		screen_coords[j] =Vec2i(
+	//			(world_coords.x + 1.) * width / 2.,
+	//			(world_coords.y + 1.) * height / 2.
+	//		);
+	//	}
+	//	triangle(
+	//		screen_coords[0],screen_coords[1],screen_coords[2],
+	//		image,TGAColor(rand()%255, rand() % 255, rand() % 255,255)
+	//	);
+	//}
+	//-----------------END-------------------
+
+
+	Model* model = new Model("..\\obj\\african_head\\african_head.obj");
+	for (int i = 0; i < model->nfaces(); i++) {
+		std::vector<int> face = model->face(i, 0);
+		Vec2i screen_coords[3];
+		Vec3f world_coord[3];
+		for (int j = 0; j < 3; j++) {
+			//遍历模型中的三角
+			Vec3f v = model->vert(face[j]);
+			screen_coords[j] = Vec2i(
+				(v.x + 1.) * width / 2.,
+				(v.y + 1.) * height / 2.
+			);
+			world_coord[j] = v;
+		}
+		//法线
+		Vec3f n = (world_coord[2] - world_coord[0]) ^ (world_coord[1]-world_coord[0]);
+		n.normalize();
+		//点积得到光照强度
+		float intensity = n * Vec3f(0,0,-1);
+		//背面剔除
+		if(intensity>0)
+		triangle(
+			screen_coords[0], screen_coords[1], screen_coords[2],
+			image, TGAColor(intensity*255, intensity * 255, intensity * 255, 255)
+		);
+	}
+
 
 	//--------Draw triangle--------------
 	//Vec2i t0[3] = {Vec2i(10,70),Vec2i(50,160),Vec2i(70,80)};
@@ -203,15 +254,20 @@ int main(int argc, char** argv) {
 	//triangle(t0[0],t0[1],t0[2],image,red);
 	//triangle(t1[0],t1[1],t1[2],image,white);
 	//triangle(t2[0],t2[1],t2[2],image,green);
+	//-----------END----------------
 
-	TGAImage frame(200, 200, TGAImage::RGB);
-	Vec2i pts[3] = { Vec2i(10,10), Vec2i(100, 30), Vec2i(190, 160) };
-	triangle(pts,frame,red);
-	frame.flip_vertically(); // i want to have the origin at the left bottom corner of the image
-	frame.write_tga_file("D:\\School\\Scripts\\Graph\\GraphicsC++\\GraphicsRedderer\\out\\output.tga");
 
-	//image.flip_vertically(); // i want to have the origin at the left bottom corner of the image
-	//image.write_tga_file("D:\\School\\Scripts\\Graph\\GraphicsC++\\GraphicsRedderer\\out\\output.tga");
+	//---------边界法画三角------------
+	//TGAImage frame(200, 200, TGAImage::RGB);
+	//Vec2i pts[3] = { Vec2i(10,10), Vec2i(100, 30), Vec2i(190, 160) };
+	//triangle(pts,frame,red);
+	//frame.flip_vertically(); 
+	//frame.write_tga_file("D:\\School\\Scripts\\Graph\\GraphicsC++\\GraphicsRedderer\\out\\output.tga");
+	//-----------END---------------
+	
+	
+	image.flip_vertically(); 
+	image.write_tga_file("..\\out\\output.tga");
 	
 
 	return 0;
