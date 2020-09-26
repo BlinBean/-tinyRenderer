@@ -1,6 +1,62 @@
 ﻿  GraphicsRedderer.cpp
 D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\tgaimage.h(65,53): warning C4244: “=”: 从“float”转换到“unsigned char”，可能丢失数据
-D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(31,15): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(33,15): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,65): warning C4244: “参数”: 从“T”转换到“T”，可能丢失数据
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,65): warning C4244:         with
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,65): warning C4244:         [
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,65): warning C4244:             T=int
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,65): warning C4244:         ]
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,65): warning C4244:         and
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,65): warning C4244:         [
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,65): warning C4244:             T=float
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,65): warning C4244:         ]
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,42): warning C4244: “参数”: 从“T”转换到“T”，可能丢失数据
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,42): warning C4244:         with
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,42): warning C4244:         [
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,42): warning C4244:             T=int
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,42): warning C4244:         ]
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,42): warning C4244:         and
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,42): warning C4244:         [
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,42): warning C4244:             T=float
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,42): warning C4244:         ]
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,19): warning C4244: “参数”: 从“T”转换到“T”，可能丢失数据
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,19): warning C4244:         with
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,19): warning C4244:         [
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,19): warning C4244:             T=int
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,19): warning C4244:         ]
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,19): warning C4244:         and
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,19): warning C4244:         [
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,19): warning C4244:             T=float
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(61,19): warning C4244:         ]
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,65): warning C4244: “参数”: 从“T”转换到“T”，可能丢失数据
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,65): warning C4244:         with
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,65): warning C4244:         [
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,65): warning C4244:             T=int
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,65): warning C4244:         ]
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,65): warning C4244:         and
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,65): warning C4244:         [
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,65): warning C4244:             T=float
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,65): warning C4244:         ]
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,42): warning C4244: “参数”: 从“T”转换到“T”，可能丢失数据
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,42): warning C4244:         with
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,42): warning C4244:         [
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,42): warning C4244:             T=int
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,42): warning C4244:         ]
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,42): warning C4244:         and
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,42): warning C4244:         [
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,42): warning C4244:             T=float
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,42): warning C4244:         ]
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,19): warning C4244: “参数”: 从“T”转换到“T”，可能丢失数据
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,19): warning C4244:         with
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,19): warning C4244:         [
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,19): warning C4244:             T=int
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,19): warning C4244:         ]
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,19): warning C4244:         and
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,19): warning C4244:         [
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,19): warning C4244:             T=float
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(62,19): warning C4244:         ]
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(160,11): warning C4553: “==”: 未使用表达式结果；是否打算使用“=”?
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(161,12): warning C4553: “==”: 未使用表达式结果；是否打算使用“=”?
 D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\geometry.h(83,1): warning C4244: “*=”: 从“const U”转换到“T”，可能丢失数据
 D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\geometry.h(83,1): warning C4244:         with
 D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\geometry.h(83,1): warning C4244:         [
@@ -10,9 +66,9 @@ D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\geometry.h
 D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\geometry.h(83,1): warning C4244:         [
 D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\geometry.h(83,1): warning C4244:             T=int
 D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\geometry.h(83,1): warning C4244:         ]
-D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(120): message : 查看对正在编译的函数 模板 实例化“vec<2,int> operator *<2,int,float>(vec<2,int>,const U &)”的引用
-D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(120): message :         with
-D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(120): message :         [
-D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(120): message :             U=float
-D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(120): message :         ]
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(132): message : 查看对正在编译的函数 模板 实例化“vec<2,int> operator *<2,int,float>(vec<2,int>,const U &)”的引用
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(132): message :         with
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(132): message :         [
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(132): message :             U=float
+D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\GraphicsRedderer\GraphicsRedderer.cpp(132): message :         ]
   GraphicsRedderer.vcxproj -> D:\School\Scripts\Graph\GraphicsC++\GraphicsRedderer\x64\Debug\GraphicsRedderer.exe

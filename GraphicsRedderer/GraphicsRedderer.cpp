@@ -9,6 +9,8 @@ const TGAColor white = TGAColor(255, 255, 255, 255);
 const TGAColor red = TGAColor(255, 0, 0, 255);
 const TGAColor green= TGAColor(0, 255, 0, 255);
 
+const int width = 200;
+const int height = 200;
 
 
 void line(int x0, int y0, int x1, int y1, TGAImage& image, TGAColor color) {
@@ -51,6 +53,16 @@ void line(int x0, int y0, int x1, int y1, TGAImage& image, TGAColor color) {
 		}
 	}
 
+}
+
+//计算重心坐标
+Vec3f barycentric(Vec2i *pts ,Vec2i P) {
+	Vec3f u = cross(
+		Vec3f(pts[2][0] - pts[0][0], pts[1][0] - pts[0][0], pts[0][0] - P[0]),
+		Vec3f(pts[2][1] - pts[0][1], pts[1][1] - pts[0][1], pts[0][1] - P[1])
+	);
+	if (std::abs(u[2]) < 1)	return Vec3f(-1, 1, 1);
+	return Vec3f(1.f - (u.x + u.y) / u.z, u.y / u.z, u.x / u.z);
 }
 
 //void triangle( Vec2i t0, Vec2i t1, Vec2i t2, TGAImage& image, TGAColor color) {
@@ -129,18 +141,47 @@ void triangle(Vec2i t0, Vec2i t1, Vec2i t2, TGAImage& image, TGAColor color) {
 	//line(t0.x, t0.y, t2.x, t2.y, image, color);
 }
 
+void triangle(Vec2i *pts,TGAImage &image ,TGAColor color) {
+	//获得画布边界
+	Vec2i bboxmin(image.get_width() - 1, image.get_height() - 1);
+	Vec2i bboxmax(0, 0);
+	//限制区间
+	Vec2i clamp(image.get_width() - 1, image.get_height() - 1);
+	//获得图形边界
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 2; j++) {
+			//每个点和边界对比
+			bboxmin[j] = std::max(0,std::min(bboxmin[j],pts[i][j]));
+			bboxmax[j] = std::min(clamp[j],std::max(bboxmax[j],pts[i][j]));
+		}
+	}
+	Vec2i P;
+	//填充图像
+	for (P.x == bboxmin.x; P.x <= bboxmax.x;P.x++) {
+		for (P.y == bboxmin.y; P.y <= bboxmax.y;P.y++) {
+			Vec3f bc_screen = barycentric(pts, P);
+			if (bc_screen.x < 0 || bc_screen.y < 0 || bc_screen.z < 0) continue;
+			image.set(P.x, P.y, color);
+		}
+	}
+}
 
 int main(int argc, char** argv) {
 
-	TGAImage image(500, 500, TGAImage::RGB);
+	//TGAImage image(500, 500, TGAImage::RGB);
 
+	//----------------------
+
+	//--------point-------
 	//add point and line
 	//image.set(52, 41, red);
+
+	//-------line-----------
 	//line(13,20,80,40,image,white);
 	//line(20,13,40,80,image,red);
 	//line(80,40,13,20,image,red);
 
-	//import model
+	//---------import model----------------
 	//Model* model = new Model("D:\\School\\Scripts\\Graph\\GraphicsC++\\GraphicsRedderer\\obj\\african_head\\african_head.obj");
 	//for (int i = 0; i < model->nfaces(); i++) {
 	//	std::vector<int> face = model->face(i, 0);
@@ -155,17 +196,22 @@ int main(int argc, char** argv) {
 	//	}
 	//}
 
-	Vec2i t0[3] = {Vec2i(10,70),Vec2i(50,160),Vec2i(70,80)};
-	Vec2i t1[3] = {Vec2i(180,50),Vec2i(150,1),Vec2i(70,180)};
-	Vec2i t2[3] = {Vec2i(180,150),Vec2i(120,160),Vec2i(130,180)};
-	triangle(t0[0],t0[1],t0[2],image,red);
-	triangle(t1[0],t1[1],t1[2],image,white);
-	triangle(t2[0],t2[1],t2[2],image,green);
-	
+	//--------Draw triangle--------------
+	//Vec2i t0[3] = {Vec2i(10,70),Vec2i(50,160),Vec2i(70,80)};
+	//Vec2i t1[3] = {Vec2i(180,50),Vec2i(150,1),Vec2i(70,180)};
+	//Vec2i t2[3] = {Vec2i(180,150),Vec2i(120,160),Vec2i(130,180)};
+	//triangle(t0[0],t0[1],t0[2],image,red);
+	//triangle(t1[0],t1[1],t1[2],image,white);
+	//triangle(t2[0],t2[1],t2[2],image,green);
 
+	TGAImage frame(200, 200, TGAImage::RGB);
+	Vec2i pts[3] = { Vec2i(10,10), Vec2i(100, 30), Vec2i(190, 160) };
+	triangle(pts,frame,red);
+	frame.flip_vertically(); // i want to have the origin at the left bottom corner of the image
+	frame.write_tga_file("D:\\School\\Scripts\\Graph\\GraphicsC++\\GraphicsRedderer\\out\\output.tga");
 
-	image.flip_vertically(); // i want to have the origin at the left bottom corner of the image
-	image.write_tga_file("D:\\School\\Scripts\\Graph\\GraphicsC++\\GraphicsRedderer\\out\\output.tga");
+	//image.flip_vertically(); // i want to have the origin at the left bottom corner of the image
+	//image.write_tga_file("D:\\School\\Scripts\\Graph\\GraphicsC++\\GraphicsRedderer\\out\\output.tga");
 	
 
 	return 0;
